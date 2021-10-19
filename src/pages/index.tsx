@@ -18,10 +18,10 @@ export default function SingIn() {
 
           <Flex as="section" justify="center" m="3">
             <Box >
-              <Heading as="h2" size="lg" fontWeight="100">
+              <Heading as="h2" fontSize={["20","25"]} fontWeight="100">
                 Uma história inesquecível
               </Heading>
-              <Heading as="h2" size="lg" ml="10" fontWeight="400">
+              <Heading as="h2" fontSize={["20","25"]} ml="10" fontWeight="400">
                 está prestes a começar
               </Heading>
             </Box>
@@ -40,8 +40,8 @@ export default function SingIn() {
 
             <Stack spacing="4">
               <Flex justify="center">
-                <Box boxShadow="md" p="4" rounded="md" bgGradient="linear( 258deg,blue.50 0%,blue.800 100%)">
-                  <Image src="/images/logoJF.svg" alt="Jf Labs" />
+                <Box boxShadow="md" p="4" rounded="lg" bgGradient="linear( 258deg,blue.50 0%,blue.800 100%)">
+                  <Image src="/images/mage@2x.png" alt="Jf Labs" />
                 </Box>
               </Flex>
 
