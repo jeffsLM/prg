@@ -1,4 +1,4 @@
-import { Flex,Divider,HStack,Text } from '@chakra-ui/react'
+import { Flex,HStack,Text } from '@chakra-ui/react'
 import { Logo } from '../Design/Logo'
 import {User} from './User'
 
@@ -15,9 +15,9 @@ export function Header({nameModule}:HeaderProps) {
                   direction="row"
                   p="2"
                   fontSize="sm"
-                  boxSize="40px" />
-                <Divider orientation="vertical"/>
-                <Text>{nameModule}</Text>
+                  boxSize="40px"
+                  />
+                {nameModule &&<Text>{nameModule}</Text>}
             </HStack>
             <User/>
         </Flex>
