@@ -5,7 +5,7 @@ import { Carousel } from '../../components/Carousel'
 
 
 
-export default function Dashboard() {
+export default function Selector() {
     return (
         <Flex direction="column" h="100vh">
             <Header nameModule="Seletor" />
