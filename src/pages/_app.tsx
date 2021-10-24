@@ -1,7 +1,7 @@
 import { AppProps } from 'next/app'
 import Head from 'next/Head'
 import { ChakraProvider } from '@chakra-ui/react';
-
+import { Footer } from '../components/Footer'
 
 import { theme } from '../styles/theme';
 
@@ -16,6 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="shortcut icon" href="/images/iconPage.png" type="image/png" />
       </Head>
       <Component {...pageProps} />
+      <Footer />
     </ChakraProvider>)
 }
 
