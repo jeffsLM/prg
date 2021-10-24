@@ -1,4 +1,4 @@
-import { Flex,  Stack, Box, Heading, Center } from '@chakra-ui/react'
+import { Flex, Stack, Box, Heading, Center } from '@chakra-ui/react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -67,7 +67,10 @@ export default function SingIn() {
             onSubmit={handleSubmit(handleSingIn)}
           >
             <Stack spacing="4">
-              <Logo />
+ 
+
+                <Logo flexDir="column" fontSize="20" direction="column" />
+        
               <Input type="text"
                 name="user"
                 error={errors.user}
@@ -80,11 +83,11 @@ export default function SingIn() {
                 label="Password"
                 {...register("password")} />
             </Stack>
-            <Button type="submit" text="Play"/>            
+            <Button type="submit" text="Play" />
           </Flex>
         </Flex>
       </Center>
-     <Footer/>
+      <Footer />
     </Box>
- )
+  )
 }
