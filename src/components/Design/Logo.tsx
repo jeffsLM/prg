@@ -6,7 +6,7 @@ interface LogoProps extends FlexProps{
 export function Logo({p=4,fontSize,flexDir,direction,...rest}: LogoProps) {
     return (
         <Flex  direction={flexDir}>
-            <Flex justify="center" a>
+            <Flex justify="center">
                 <Box
                   boxShadow="md"
                   p={p}
