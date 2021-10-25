@@ -3,7 +3,7 @@ import { Flex,FlexProps, Box, Heading ,Image} from '@chakra-ui/react'
 interface LogoProps extends FlexProps{
     fontSize: string;
 }
-export function Logo({p=4,fontSize,flexDir,direction,...rest}: LogoProps) {
+export function Logo({p=4,fontSize,flexDir,direction,boxSize,...rest}: LogoProps) {
     return (
         <Flex  direction={flexDir}>
             <Flex justify="center">
@@ -15,7 +15,7 @@ export function Logo({p=4,fontSize,flexDir,direction,...rest}: LogoProps) {
                   bgGradient="linear( 258deg,blue.50 0%,blue.800 100%)"
 
                   {...rest}>
-                    <Image src="/images/mage@2x.png"   alt="Jf Labs" />
+                    <Image src="/images/mage@2x.png" boxSize={boxSize}   alt="Jf Labs" />
                 </Box>
             </Flex>
             <Flex direction={direction} pt="1.5" ml="2" alignItems="center">

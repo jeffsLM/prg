@@ -11,6 +11,7 @@ export function Card() {
             w="80%"
             minWidth={350}
             minH={550}
+            maxW={400}
             m="2"
             h="70%"
             bg="blue.700"

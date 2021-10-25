@@ -7,7 +7,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { Input } from '../components/Form/Input'
 import { Logo } from '../components/Design/Logo'
 import { Button } from '../components/Design/Button'
-import { Footer } from '../components/Footer'
+
 
 
 type SingInFormData = {
@@ -69,7 +69,7 @@ export default function SingIn() {
             <Stack spacing="4">
  
 
-                <Logo flexDir="column" fontSize="20" direction="column" />
+                <Logo flexDir="column" fontSize="20" boxSize="100" direction="column" />
         
               <Input type="text"
                 name="user"
@@ -87,7 +87,7 @@ export default function SingIn() {
           </Flex>
         </Flex>
       </Center>
-      <Footer />
+
     </Box>
   )
 }
