@@ -1,7 +1,7 @@
 # PRG - Table Master
 
 <p align="center">
-  <img   src="https://github.com/jeffsLM/prg/blob/feature/develop/public/images/PRG.png">
+  <img   src="https://github.com/jeffsLM/prg/blob/develop/public/images/PRG.png">
   <br/>
   Imagina integrar mobile e web para várias aventuras indescritíveis que apenas um RPG pode trazer?
   <br/>
