@@ -80,11 +80,11 @@ export default function SagaEditor() {
                         <Button text="Salvar" w="70%" />
                     </VStack>
 
-                    <Stack spacing="8" web overflow="auto" >
-                        <PrgItemController icon={FaAngleDoubleRight}>
+                    <Stack spacing="8" overflow="auto" >
+                        <PrgItemController iconRight={FaAngleDoubleRight}>
                             Habilidades e Pericias
                         </PrgItemController>
-                        <PrgItemController icon={FaAngleDoubleRight}>
+                        <PrgItemController iconRight={FaAngleDoubleRight}>
                             Players Config
                         </PrgItemController>
                     </Stack>
