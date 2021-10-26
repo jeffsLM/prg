@@ -34,8 +34,9 @@ export default function skillMaker() {
                             </Box>
                             <Divider w="65%" />
                             <PrgContentSkillMaker                            >
-                                <PrgItemSkillMaker damage="d5+d7" title="Olhar Tenebroso" />
-                            </PrgContentSkillMaker>
+                                <PrgItemSkillMaker  isEmpty  />
+                                <PrgItemSkillMaker  damage="d5+d7" title="Olhar Tenebroso"  />
+                            </PrgContentSkillMaker >
                         </VStack>
 
                         <VStack
@@ -51,7 +52,8 @@ export default function skillMaker() {
                             </Box>
                             <Divider w="65%" />
                             <PrgContentSkillMaker                            >
-                                <PrgItemSkillMaker damage="7 pts" title="Destreza" />
+                                <PrgItemSkillMaker  isEmpty damage="7 pts" title="Destreza" />
+                                <PrgItemSkillMaker   damage="7 pts" title="Destreza" />
                             </PrgContentSkillMaker>
                         </VStack>
 
@@ -68,7 +70,8 @@ export default function skillMaker() {
                             </Box>
                             <Divider w="65%" />
                             <PrgContentSkillMaker >
-                                <PrgItemSkillMaker damage="" title="Corda 6m" />
+                                <PrgItemSkillMaker  isEmpty damage="" title="Corda 6m" />
+                                <PrgItemSkillMaker   damage="" title="Corda 6m" />
                             </PrgContentSkillMaker>
                         </VStack>
 

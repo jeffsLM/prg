@@ -3,16 +3,42 @@ import { AiOutlinePlus } from 'react-icons/ai'
 
 
 interface PrgItemSkillMakerProps {
-    title: string;
+    title?: string;
     damage?: string;
+    isEmpty?: boolean;
 }
 
-export function PrgItemSkillMaker({ title, damage }: PrgItemSkillMakerProps) {
+export function PrgItemSkillMaker({ title, damage, isEmpty }: PrgItemSkillMakerProps) {
+    if (isEmpty) {
+        return (
+            <Center
+                w="100%"
+                borderRadius="md"
+                minH="20"
+                bg="blue.900"
+                _hover={{
+                    bgColor: 'blue.500',
+                    cursor: 'pointer'
+                }}
+
+            >
+                <Icon as={AiOutlinePlus} />
+            </Center>
+        )
+    }
+
+
     return (
         <Flex
             direction="row"
             w="100%"
-            bg="blue.900">
+            bg="blue.900"
+            _hover={{
+                bgColor: 'blue.500',
+                cursor: 'pointer'
+            }}
+            borderRadius="md"
+        >
             <Flex
                 direction="column"
                 p="4"
