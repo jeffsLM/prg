@@ -1,4 +1,4 @@
-import { Center, Box, Flex, Text, HStack, VStack, Divider } from '@chakra-ui/react'
+import { Center, Box, Flex, Text, Stack, Divider } from '@chakra-ui/react'
 import { FaAngleDoubleLeft } from 'react-icons/fa'
 
 
@@ -11,35 +11,42 @@ import { PrgContentSkillMaker } from '../../../../components/Selector/SkillMaker
 export default function skillMaker() {
     return (
         <Center>
-            <Box minH="100vh" maxW={1440} w="100%"  >
+            <Box h="100%" maxW={1440}  >
                 <Header nameModule="Skill Maker" />
-                <Flex >
-                    <VStack spacing="8" minW="20">
+                <Flex direction={["column", "row"]}>
+                    <Stack direction={"column"} spacing="8" maxW="40">
                         <PrgItemController iconLeft={FaAngleDoubleLeft}>
                             Storyboard
                         </PrgItemController>
-                    </VStack>
+                    </Stack>
 
-                    <HStack spacing="4" align="flex-start" w="100%" m="4" h="100%">
-                        <VStack
+                    <Stack
+                      direction={["column",
+                      "row"]}
+                      spacing="4"
+                      align="flex-start"
+                      w="100%"
+                      m={["2","4"]}
+                      h="100%">
+                        <Stack
                             spacing="4"
                             h="100%"
                             minW="30%"
                             bg="blue.700"
                             borderRadius="md"
-                            p="4"
-                        >
+                            p="4">
                             <Box align="center" mt="4" mb="4" >
-                                <Input type="text" label="Habilidades" w="100%" name="searchAbility" placeholder="pesquisar..." />
+                                <Input type="text" label="Habilidades" name="searchAbility" placeholder="pesquisar..." />
                             </Box>
-                            <Divider w="65%" />
+                            <Divider/>
                             <PrgContentSkillMaker                            >
-                                <PrgItemSkillMaker  isEmpty  />
-                                <PrgItemSkillMaker  damage="d5+d7" title="Olhar Tenebroso"  />
+                                <PrgItemSkillMaker isEmpty />
+                                <PrgItemSkillMaker damage="d5+d7" title="Olhar Tenebroso" />
                             </PrgContentSkillMaker >
-                        </VStack>
+                        </Stack>
 
-                        <VStack
+                        <Stack
+
                             spacing="4"
                             h="100%"
                             minW="30%"
@@ -50,14 +57,14 @@ export default function skillMaker() {
                             <Box align="center" mt="4" mb="4" >
                                 <Input type="text" label="Proficiencias" w="100%" name="searchProficiency" placeholder="pesquisar..." />
                             </Box>
-                            <Divider w="65%" />
+                            <Divider />
                             <PrgContentSkillMaker                            >
-                                <PrgItemSkillMaker  isEmpty damage="7 pts" title="Destreza" />
-                                <PrgItemSkillMaker   damage="7 pts" title="Destreza" />
+                                <PrgItemSkillMaker isEmpty damage="7 pts" title="Destreza" />
+                                <PrgItemSkillMaker damage="7 pts" title="Destreza" />
                             </PrgContentSkillMaker>
-                        </VStack>
+                        </Stack>
 
-                        <VStack
+                        <Stack
                             spacing="4"
                             h="100%"
                             minW="30%"
@@ -68,14 +75,14 @@ export default function skillMaker() {
                             <Box align="center" mt="4" mb="4" >
                                 <Input type="text" label="Itens" w="100%" name="searchItens" placeholder="pesquisar..." />
                             </Box>
-                            <Divider w="65%" />
+                            <Divider />
                             <PrgContentSkillMaker >
-                                <PrgItemSkillMaker  isEmpty damage="" title="" />
-                                <PrgItemSkillMaker   damage="" title="Corda 6m" />
+                                <PrgItemSkillMaker isEmpty damage="" title="" />
+                                <PrgItemSkillMaker damage="" title="Corda 6m" />
                             </PrgContentSkillMaker>
-                        </VStack>
+                        </Stack>
 
-                    </HStack>
+                    </Stack>
                 </Flex>
             </Box>
         </Center>

@@ -9,7 +9,7 @@ interface PrgContentSkillMakerProps extends StackProps{
 export function PrgContentSkillMaker({ children,...rest }: PrgContentSkillMakerProps) {
     return (
         <VStack
-            w="65%"
+            w="100%"
             direction="column"
             overflowY="auto"
             maxH="550" 
