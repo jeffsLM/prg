@@ -70,7 +70,7 @@ export default function skillMaker() {
                             </Box>
                             <Divider w="65%" />
                             <PrgContentSkillMaker >
-                                <PrgItemSkillMaker  isEmpty damage="" title="Corda 6m" />
+                                <PrgItemSkillMaker  isEmpty damage="" title="" />
                                 <PrgItemSkillMaker   damage="" title="Corda 6m" />
                             </PrgContentSkillMaker>
                         </VStack>

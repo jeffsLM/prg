@@ -38,7 +38,7 @@ export default function SingIn() {
         <Flex
           flex="1"
           w="100vw"
-          h="89.2vh"
+          h="100vh"
           maxWidth={1440}
           align="center"
           flexDir={["column", "row"]}
