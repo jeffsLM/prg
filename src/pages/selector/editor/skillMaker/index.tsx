@@ -4,9 +4,9 @@ import { FaAngleDoubleLeft } from 'react-icons/fa'
 
 import { Header } from '../../../../components/Header'
 import { Input } from '../../../../components/Form/Input'
-import { PrgItemController } from '../../../../components/Selector/PrgItemController'
-import { PrgItemSkillMaker } from '../../../../components/Selector/PrgItemSkillMaker'
-import { PrgContentSkillMaker } from '../../../../components/Selector/PrgContentSkillMaker'
+import { PrgItemController } from '../../../../components/Selector/Controller/PrgItemController'
+import { PrgItemSkillMaker } from '../../../../components/Selector/SkillMaker/PrgItemSkillMaker'
+import { PrgContentSkillMaker } from '../../../../components/Selector/SkillMaker/PrgContentSkillMaker'
 
 export default function skillMaker() {
     return (
