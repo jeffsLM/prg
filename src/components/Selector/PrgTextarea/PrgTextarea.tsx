@@ -4,7 +4,7 @@ export function PrgTextarea({...rest}:TextareaProps){
     return (
         <Textarea
         w="100%"
-     
+        minH="22"
         variant="filled"
         bg="blue.900"
         borderColor="blue.900"

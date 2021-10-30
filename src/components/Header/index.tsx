@@ -1,4 +1,4 @@
-import { Flex,HStack,Text } from '@chakra-ui/react'
+import { Flex,HStack,Text,useBreakpointValue } from '@chakra-ui/react'
 import { Logo } from '../Design/Logo'
 import {User} from './User'
 
@@ -7,6 +7,11 @@ interface HeaderProps {
 }
 
 export function Header({nameModule}:HeaderProps) {
+    const isWideVersion = useBreakpointValue({
+        base: false,
+        lg: true,
+      })
+
     return (
         <Flex justify="space-between" align="center" p="3">
             <HStack spacing="4" >
@@ -17,9 +22,9 @@ export function Header({nameModule}:HeaderProps) {
                   fontSize="sm"
                   boxSize="40px"
                   />
-                {nameModule &&<Text>{nameModule}</Text>}
+                {nameModule && isWideVersion && <Text>{nameModule}</Text>}
             </HStack>
-            <User/>
+            <User isWideVersion={isWideVersion}/>
         </Flex>
     );
 }

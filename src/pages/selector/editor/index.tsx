@@ -14,9 +14,9 @@ import { PrgTextarea } from '../../../components/Selector/PrgTextarea/PrgTextare
 export default function SagaEditor() {
     return (
         <Center>
-            <Box minH="100vh" maxW={1440} w="100%" >
+            <Box H="100%" maxW={1440} w="100%" >
                 <Header nameModule="Elysium Saga's" />
-                <Flex w="100%" direction="row" mt="10">
+                <Flex w="100%" direction={["column","row"]} mt="10">
                     <Stack
                         spacing="2"
                         web

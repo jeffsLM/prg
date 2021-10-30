@@ -2,7 +2,7 @@ import { Flex, Text, Image } from '@chakra-ui/react'
 
 export function Footer() {
     return (
-        <Flex as="footer" w="100%" justify="center" direction="row"  pb="9" >
+        <Flex as="footer" w="100%" justify="center" direction="row"  p="9" >
             <Text fontSize="10">
                 Powered by
             </Text>
