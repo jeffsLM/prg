@@ -10,7 +10,7 @@ export function PrgTextarea({...rest}:TextareaProps){
         borderColor="blue.900"
         resize="none"
         colorScheme="blue"
-
+        
         focusBorderColor="blue.500"
         _hover={{
             bgColor: "blue.900",

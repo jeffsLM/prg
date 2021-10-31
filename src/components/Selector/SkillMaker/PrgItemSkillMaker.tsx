@@ -1,29 +1,38 @@
-import { Center, Flex, Text, Icon } from '@chakra-ui/react'
+import { Center, Flex, Text, Icon, useDisclosure, CenterProps } from '@chakra-ui/react'
 import { AiOutlinePlus } from 'react-icons/ai'
 
+import { Modal } from '../../Modal'
+import { Button } from '../../Design/Button'
+import {Input} from '../../Form/Input'
 
-interface PrgItemSkillMakerProps {
+interface PrgItemSkillMakerProps extends CenterProps{
     title?: string;
     damage?: string;
     isEmpty?: boolean;
 }
 
-export function PrgItemSkillMaker({ title, damage, isEmpty }: PrgItemSkillMakerProps) {
+export function PrgItemSkillMaker({ title, damage, isEmpty,onClick }: PrgItemSkillMakerProps) {
+
+
     if (isEmpty) {
         return (
-            <Center
-                w="100%"
-                borderRadius="md"
-                minH="20"
-                bg="blue.900"
-                _hover={{
-                    bgColor: 'blue.500',
-                    cursor: 'pointer'
-                }}
+            <>
+                <Center
+                    onClick={onClick}
+                    w="100%"
+                    borderRadius="md"
+                    minH="20"
+                    bg="blue.900"
+                    _hover={{
+                        bgColor: 'blue.500',
+                        cursor: 'pointer'
+                    }}
+                >
+                    <Icon as={AiOutlinePlus} />
+                </Center>
 
-            >
-                <Icon as={AiOutlinePlus} />
-            </Center>
+              
+            </>
         )
     }
 

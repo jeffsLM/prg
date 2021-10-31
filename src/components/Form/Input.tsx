@@ -8,7 +8,7 @@ interface InputProps extends ChakraInputProps {
     error?: FieldError;
 }
 
-const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = ({ name,error = null, label, ...rest }, ref) => {
+const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = ({ name,error = null,size="md", label, ...rest }, ref) => {
     const { register } = useForm()
     
     return (
@@ -25,7 +25,7 @@ const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = ({ nam
                 _hover={{
                     bgColor: 'blue.900'
                 }}
-                size="md"
+                size={size}
                 ref={ref}
                 {...rest}
             />
