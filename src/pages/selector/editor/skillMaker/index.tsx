@@ -41,8 +41,6 @@ export default function skillMaker() {
                             <PrgContentSkillMaker                            >
                                 <PrgItemSkillMaker isEmpty />
                                 <PrgItemSkillMaker damage="d5+d7" title="Olhar Tenebroso" />
-
-
                             </PrgContentSkillMaker >
                         </Stack>
 
@@ -53,8 +51,16 @@ export default function skillMaker() {
                             borderRadius="md"
                             p="4"
                         >
-                            <Box align="center" mt="4" mb="4" >
-                                <Input type="text" label="Proficiencias" w="100%" name="searchProficiency" placeholder="pesquisar..." />
+                            <Box
+                              align="center"
+                              mt="4"
+                              mb="4">
+                                <Input
+                                  type="text"
+                                  label="Proficiencias"
+                                  w="100%"
+                                  name="searchProficiency"
+                                  placeholder="pesquisar..." />
                             </Box>
                             <Divider />
                             <PrgContentSkillMaker                            >
@@ -72,7 +78,12 @@ export default function skillMaker() {
                             p="4"
                         >
                             <Box align="center" mt="4" mb="4" >
-                                <Input type="text" label="Itens" w="100%" name="searchItens" placeholder="pesquisar..." />
+                                <Input
+                                  type="text"
+                                  label="Itens"
+                                  w="100%"
+                                  name="searchItens"
+                                  placeholder="pesquisar..." />
                             </Box>
                             <Divider />
                             <PrgContentSkillMaker >
