@@ -12,7 +12,7 @@ export function Carousel() {
         <>
 
             {
-                sagas.map((v, i) => <Card key={i.toString()} />)
+                sagas.map((v, i) => <Card href="/selector/editor" key={i.toString()} />)
             }
 
         </>

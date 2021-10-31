@@ -18,8 +18,7 @@ export default function SagaEditor() {
                 <Header nameModule="Elysium Saga's" />
                 <Flex w="100%" direction={["column","row"]} mt="10">
                     <Stack
-                        spacing="2"
-                        web
+                        spacing="2"                        
                         overflow="auto"
                         maxH={400}
                         css={{
@@ -50,10 +49,10 @@ export default function SagaEditor() {
                     </VStack>
 
                     <Stack spacing="8" overflow="auto" >
-                        <PrgItemController iconRight={FaAngleDoubleRight}>
+                        <PrgItemController iconRight={FaAngleDoubleRight} href="./editor/skillMaker">
                             Habilidades e Pericias
                         </PrgItemController>
-                        <PrgItemController iconRight={FaAngleDoubleRight}>
+                        <PrgItemController iconRight={FaAngleDoubleRight} href="./editor/player">
                             Players Config
                         </PrgItemController>
                     </Stack>

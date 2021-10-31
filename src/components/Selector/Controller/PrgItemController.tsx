@@ -1,6 +1,6 @@
-import { Flex, Icon, Text } from '@chakra-ui/react'
+import { Flex, Icon, Text,Link } from '@chakra-ui/react'
 import { ElementType } from "react";
-import Link from "next/link";
+
 interface PrgItemMeetingProps {
     iconLeft?: ElementType
     iconRight?: ElementType
@@ -10,7 +10,7 @@ interface PrgItemMeetingProps {
 
 export function PrgItemController({ iconLeft, iconRight, href = "#", children }: PrgItemMeetingProps) {
     return (
-        <Link href={href} passHref>
+        <Link href={href}  style={{ textDecoration: 'none' }} colorScheme="blue" passhref>
             <Flex
                 align="center"
                 bg="blue.700"

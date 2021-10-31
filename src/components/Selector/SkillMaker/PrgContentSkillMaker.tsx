@@ -12,7 +12,7 @@ export function PrgContentSkillMaker({ children,...rest }: PrgContentSkillMakerP
             w="100%"
             direction="column"
             overflowY="auto"
-            maxH="550" 
+            maxH="350" 
             {...rest}
             spacing="4"
             m="4"
