@@ -1,17 +1,14 @@
-import { Center, Flex, Text, Icon, useDisclosure, CenterProps } from '@chakra-ui/react'
+import { Center, Flex, Text, Icon, CenterProps } from '@chakra-ui/react'
 import { AiOutlinePlus } from 'react-icons/ai'
 
-import { Modal } from '../../Modal'
-import { Button } from '../../Design/Button'
-import {Input} from '../../Form/Input'
 
-interface PrgItemSkillMakerProps extends CenterProps{
+interface PrgItemSkillMakerProps extends CenterProps {
     title?: string;
     damage?: string;
     isEmpty?: boolean;
 }
 
-export function PrgItemSkillMaker({ title, damage, isEmpty,onClick }: PrgItemSkillMakerProps) {
+export function PrgItemSkillMaker({ title, damage, isEmpty, onClick }: PrgItemSkillMakerProps) {
 
 
     if (isEmpty) {
@@ -22,6 +19,7 @@ export function PrgItemSkillMaker({ title, damage, isEmpty,onClick }: PrgItemSki
                     w="100%"
                     borderRadius="md"
                     minH="20"
+                    minW="60"
                     bg="blue.900"
                     _hover={{
                         bgColor: 'blue.500',
@@ -31,7 +29,7 @@ export function PrgItemSkillMaker({ title, damage, isEmpty,onClick }: PrgItemSki
                     <Icon as={AiOutlinePlus} />
                 </Center>
 
-              
+
             </>
         )
     }
@@ -52,6 +50,7 @@ export function PrgItemSkillMaker({ title, damage, isEmpty,onClick }: PrgItemSki
                 direction="column"
                 p="4"
                 w="100%"
+                minW="60"
                 justify="center"
                 minH="20"
                 fontWeight="300">
@@ -65,6 +64,7 @@ export function PrgItemSkillMaker({ title, damage, isEmpty,onClick }: PrgItemSki
             <Center
                 bg="blue.600"
                 minW="10"
+
                 borderTopRightRadius="md"
                 borderBottomRightRadius="md">
                 <Icon as={AiOutlinePlus} />
