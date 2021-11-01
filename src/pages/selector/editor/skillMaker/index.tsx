@@ -10,8 +10,8 @@ import { Header } from '../../../../components/Header'
 import { Input } from '../../../../components/Form/Input'
 import { Button } from '../../../../components/Design/Button'
 import { PrgItemController } from '../../../../components/Selector/Controller/PrgItemController'
-import { PrgItemSkillMaker } from '../../../../components/Selector/SkillMaker/PrgItemSkillMaker'
-import { PrgContentSkillMaker } from '../../../../components/Selector/SkillMaker/PrgContentSkillMaker'
+import { PrgItemSkillMaker } from '../../../../components/SkillMaker/PrgItemSkillMaker'
+import { PrgContentSkillMaker } from '../../../../components/SkillMaker/PrgContentSkillMaker'
 import { PrgTextarea } from '../../../../components/Selector/PrgTextarea/PrgTextarea'
 
 
@@ -25,7 +25,7 @@ const skillMakerFormSquema = yup.object().shape({
     skill: yup.string().required(),
     power: yup.string().required(),
     description: yup.string().required(),
-   
+
 })
 
 
@@ -76,7 +76,7 @@ export default function SkillMaker() {
                                     <Input type="text" label="Habilidades" name="searchAbility" placeholder="pesquisar..." />
                                 </Box>
                                 <Divider />
-                                <PrgContentSkillMaker                            >
+                                <PrgContentSkillMaker direction="column">
                                     <PrgItemSkillMaker onClick={onOpen} isEmpty />
                                     <PrgItemSkillMaker onClick={onOpen} damage="d5+d7" title="Olhar Tenebroso" />
                                 </PrgContentSkillMaker >
@@ -125,7 +125,7 @@ export default function SkillMaker() {
                                         placeholder="pesquisar..." />
                                 </Box>
                                 <Divider />
-                                <PrgContentSkillMaker >
+                                <PrgContentSkillMaker  direction="column" maxH="350">
                                     <PrgItemSkillMaker onClick={onOpen} isEmpty damage="" title="" />
                                     <PrgItemSkillMaker onClick={onOpen} damage="" title="Corda 6m" />
                                 </PrgContentSkillMaker>
@@ -137,14 +137,14 @@ export default function SkillMaker() {
             </Center>
 
             <Modal TextHeader="" isOpen={isOpen} onOpen={onOpen} onClose={onClose}>
-                <Stack as="form" spacing="8" p="2"  onSubmit={handleSubmit(handleCreteNewItem)}>
+                <Stack as="form" spacing="8" p="2" onSubmit={handleSubmit(handleCreteNewItem)}>
                     <Input
-                      name="skill"
-                      placeholder="Algo poderoso... talvez?"
-                      size="lg"
-                      label="Nome"
-                        error={errors.skill} 
-                      {...register("skill")} />
+                        name="skill"
+                        placeholder="Algo poderoso... talvez?"
+                        size="lg"
+                        label="Nome"
+                        error={errors.skill}
+                        {...register("skill")} />
                     <SimpleGrid columns={2} spacing={10}>
                         <Flex
                             w="100%"
@@ -177,12 +177,12 @@ export default function SkillMaker() {
                         </Flex>
 
                         <Input
-                          name="power"
-                          placeholder="D20 * Destreza"
-                          size="lg"
-                          label="Dados/Pontuação"
-                          error={errors.power} 
-                          {...register("power")} />
+                            name="power"
+                            placeholder="D20 * Destreza"
+                            size="lg"
+                            label="Dados/Pontuação"
+                            error={errors.power}
+                            {...register("power")} />
 
                         <Flex direction="column" flex="1" justify="space-between">
                             <Text >Classe</Text>
@@ -204,9 +204,9 @@ export default function SkillMaker() {
                         <Text>
                             Regras/Descrição
                         </Text>
-                        <PrgTextarea h="150" placeholder="Regras? pra quê regras?" name="description" error={errors.description}   {...register("description")}/>
+                        <PrgTextarea h="150" placeholder="Regras? pra quê regras?" name="description" error={errors.description}   {...register("description")} />
                     </Flex>
-                    <Button type="submit" text="Salvar" w="100%"  isLoading={formState.isSubmitting} />
+                    <Button type="submit" text="Salvar" w="100%" isLoading={formState.isSubmitting} />
                 </Stack>
             </Modal>
         </>
