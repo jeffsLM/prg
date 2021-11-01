@@ -7,9 +7,9 @@ import { Carousel } from '../../components/Carousel'
 
 export default function Selector() {
     return (
-        <Flex direction="column" h="100vh">
+        <Flex direction="column"  flex="1">
             <Header nameModule="Seletor" />
-            <Flex flex="1" direction={["column", "row"]} align="center" overflowX="hidden">
+            <Flex direction={["column", "row"]} align="center"   flex="1" justify="center" overflowX="hidden">
                 <Carousel />
             </Flex>
         </Flex>

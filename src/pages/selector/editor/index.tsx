@@ -1,97 +1,131 @@
-import { Flex, Box, Stack, Textarea, VStack, Center } from '@chakra-ui/react'
-import React, { useMemo, useState } from 'react'
+import { Flex, Box, Stack, VStack, Center, useDisclosure, HStack, Text } from '@chakra-ui/react'
+import React from 'react'
 import { BsPlus } from 'react-icons/bs'
 import { FaAngleDoubleRight } from 'react-icons/fa'
 
+import { Modal } from '../../../components/Modal'
+import { BarsStatus } from '../../../components/BarsStatus'
 import { Header } from '../../../components/Header'
 import { Button } from '../../../components/Design/Button'
-import { PrgItemMeeting } from '../../../components/Selector/PrgItemMeeting'
-import { PrgItemController } from '../../../components/Selector/PrgItemController'
-import { RichTextBlock } from '../../../components/RichText'
+import { Input } from '../../../components/Form/Input'
+import { PrgItemMeeting } from '../../../components/Selector/Meeting/PrgItemMeeting'
+import { PrgContentItemMeeting } from '../../../components/Selector/Meeting/PrgContentItemMeeting'
+import { PrgItemController } from '../../../components/Selector/Controller/PrgItemController'
+import { PrgTextarea } from '../../../components/Selector/PrgTextarea/PrgTextarea'
+import { PrgItemSkillMaker } from '../../../components/SkillMaker/PrgItemSkillMaker'
+import { PrgContentSkillMaker } from '../../../components/SkillMaker/PrgContentSkillMaker'
 
 
 export default function SagaEditor() {
+
+    const { isOpen: isEditOpen, onOpen: onEditOpen, onClose: onEditClose } = useDisclosure()
+    const { isOpen: isJoinOpen, onOpen: onJoinOpen, onClose: onJoinClose } = useDisclosure()
+
     return (
-        <Center>
-            <Box minH="100vh" maxW={1440} w="100%" >
-                <Header nameModule="Elysium Saga's" />
-                <Flex w="100%" direction="row" mt="10">
-                    <Stack
-                        spacing="2"
-                        web
-                        overflow="auto"
-                        maxH={400}
-                        css={{
-                            '&::-webkit-scrollbar': { width: '4px' },
-                            '&::-webkit-scrollbar-track': { width: '6px' },
-                            '&::-webkit-scrollbar-thumb': {
-                                background: `rgba(1,24,40,1)`,
-                                borderRadius: '24px',
-                            },
-                        }}>
-                        <PrgItemMeeting>
-                            Início campanha
-                        </PrgItemMeeting>
-                        <PrgItemMeeting icon={BsPlus}>
-                            Add novo encontro
-                        </PrgItemMeeting>
-                    </Stack>
+        <>
+            <Center>
+                <Box H="100%" maxW={1440} w="100%" >
+                    <Header nameModule="Elysium Saga's" />
+                    <Flex w="100%" direction={["column", "row"]} mt="10">
+                        <PrgContentItemMeeting>
+                            <PrgItemMeeting>
+                                Início campanha
+                            </PrgItemMeeting>
+                            <PrgItemMeeting icon={BsPlus}>
+                                Add novo encontro
+                            </PrgItemMeeting>
+                        </PrgContentItemMeeting>
 
-                    <VStack flex="1" p="4" justify="center">
-                        <Textarea
-                            w="100%"
-                            maxh="50"
+                        <VStack flex="1" p="4" justify="center">
+                            <Flex
+                                h="200"
+                                w="100%"
+                                bg="blue.900"
+                                align="center"
+                                justify="center"
+                                onClick={onEditOpen}
+                                _hover={{ cursor: 'pointer' }}
+                            >
+                                Clique para vincular a história
+                            </Flex>
+                            <Flex
+                                h="20"
+                                w="60%"
+                                bg="blue.900"
+                                align="center"
+                                justify="center"
+                                onClick={onJoinOpen}
+                                _hover={{ cursor: 'pointer' }}
+                            >
+                                Vincular Encontro
+                            </Flex>
+
+                        </VStack>
+
+                        <Stack
+                            spacing="8"
+                            minHeight="200"
+                            overflow="auto">
+                            <PrgItemController iconRight={FaAngleDoubleRight} href="./editor/skillMaker">
+                                Habilidades e Pericias
+                            </PrgItemController>
+                            <PrgItemController iconRight={FaAngleDoubleRight} href="./editor/player">
+                                Players Config
+                            </PrgItemController>
+                        </Stack>
+                    </Flex>
+                </Box>
+            </Center>
+
+            <Modal TextHeader="Editor Saga's" isOpen={isEditOpen} onOpen={onEditOpen} onClose={onEditClose}>
+                <VStack flex="1" p="4" justify="center">
+                    <PrgTextarea
+                        h="20"
+                        placeholder="Titulo do encontro"
+                        fontSize="30" />
+                    <PrgTextarea
+                        h="300"
+                        placeholder="Humm algo interresante está saindo..." />
+                    <Button text="Salvar" w="70%" />
+                </VStack>
+            </Modal>
+
+            <Modal TextHeader="Meet Link" isOpen={isJoinOpen} onOpen={onJoinOpen} onClose={onJoinClose}>
+                <Flex direction="row">
+                    <VStack w="100%" p="5" spacing="4" >
+                        <BarsStatus w="100%" Label="Vida" />
+
+                        <Flex w="100%" direction="column">
+                            <Text>
+                                Habilidades
+                            </Text>
+                            <PrgContentSkillMaker spacing="8" direction="row" w="100%" minW="150" maxW="700">
+                                <PrgItemSkillMaker title="Olhar Tenebroso" damage="D8 * vida" />
+                                <PrgItemSkillMaker title="Degular" damage="D20 * Destreza" />
+                                <PrgItemSkillMaker title="Degular" damage="D20 * Destreza" />
+                            </PrgContentSkillMaker>
+                        </Flex>
+
+                        <PrgTextarea
+                            h="200"
+                            placeholder="Descrição sobre o inimigo" />
+                        <PrgTextarea
                             h="20"
-                            variant="filled"
-                            bg="blue.900"
-                            borderColor="blue.900"
-                            resize="none"
-                            colorScheme="blue"
-                            placeholder="Titulo do encontro"
-                            focusBorderColor="blue.500"
-                            fontSize="30"
-                            _hover={{
-                                bgColor: "blue.900",
-                            }}
-                        />
-                        <Textarea
-                            w="100%"
-                            h="300"
-                            variant="filled"
-                            bg="blue.900"
-                            borderColor="blue.900"
-                            resize="none"
-                            colorScheme="blue"
-                            placeholder="Humm algo interresante está saindo...."
-                            focusBorderColor="blue.500"
-
-                            _hover={{
-                                bgColor: "blue.900",
-                            }}
-                            css={{
-                                '&::-webkit-scrollbar': { width: '4px' },
-                                '&::-webkit-scrollbar-track': { width: '6px' },
-                                '&::-webkit-scrollbar-thumb': {
-                                    background: `rgba(1,24,40,1)`,
-                                    borderRadius: '24px',
-                                },
-                            }}
-                        />
-                        <Button text="Salvar" w="70%" />
+                            placeholder="Drops..." />
+                            
                     </VStack>
 
-                    <Stack spacing="8" overflow="auto" >
-                        <PrgItemController iconRight={FaAngleDoubleRight}>
-                            Habilidades e Pericias
-                        </PrgItemController>
-                        <PrgItemController iconRight={FaAngleDoubleRight}>
-                            Players Config
-                        </PrgItemController>
-                    </Stack>
+                    <VStack minW="30%" p="4" spacing="6">
+                        <Input name="search" label="Itens" type="text" placeholder="pesquisar" />
+                        <PrgContentSkillMaker spacing="4" direction="column" w="100%" minW="150" maxW="700">
+                            <PrgItemSkillMaker title="Olhar Tenebroso" damage="D8 * vida" />
+                            <PrgItemSkillMaker title="Degular" damage="D20 * Destreza" />
+                            <PrgItemSkillMaker title="Degular" damage="D20 * Destreza" />
+                        </PrgContentSkillMaker>
+                    </VStack>
                 </Flex>
+            </Modal>
 
-
-            </Box>
-        </Center>
+        </>
     )
 }

@@ -1,6 +1,6 @@
 import { Box, Flex, Image,ImageProps } from '@chakra-ui/react';
 
-export function PrgIcon({ src,boxSize }: ImageProps) {
+export function PrgIcon({ src,boxSize ,...rest}: ImageProps) {
     return (
         <Flex justify="center">
             <Box

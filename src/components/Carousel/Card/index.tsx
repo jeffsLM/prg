@@ -1,17 +1,21 @@
-import { Box, BoxProps, Flex, Text, Image, VStack, Center } from '@chakra-ui/react';
+import { Box, BoxProps, Flex, Text, VStack, Center, Link } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { PrgIcon } from '../../Design/PrgIcon'
 import { Button } from '../../Design/Button'
 
 export const MotionBox = motion<BoxProps>(Box);
 
-export function Card() {
+interface CardProps {
+    href?: string
+}
+
+export function Card({ href }: CardProps) {
     return (
         <Flex
             w="80%"
             minWidth={350}
             minH={550}
-            maxW={400}
+            maxW={450}
             m="2"
             h="70%"
             bg="blue.700"
@@ -32,8 +36,14 @@ export function Card() {
                     </Flex>
                 </Center>
             </VStack>
-
-            <Button text="Play"/>
+            <Link
+                href={href}
+                passhref
+                style={{ textDecoration: 'none' }}
+                >
+                    
+                <Button  w="100%" text="Play" />
+            </Link>
         </Flex>
     );
 }

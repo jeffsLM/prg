@@ -1,29 +1,36 @@
-import { Center, Flex, Text, Icon } from '@chakra-ui/react'
+import { Center, Flex, Text, Icon, CenterProps } from '@chakra-ui/react'
 import { AiOutlinePlus } from 'react-icons/ai'
 
 
-interface PrgItemSkillMakerProps {
+interface PrgItemSkillMakerProps extends CenterProps {
     title?: string;
     damage?: string;
     isEmpty?: boolean;
 }
 
-export function PrgItemSkillMaker({ title, damage, isEmpty }: PrgItemSkillMakerProps) {
+export function PrgItemSkillMaker({ title, damage, isEmpty, onClick }: PrgItemSkillMakerProps) {
+
+
     if (isEmpty) {
         return (
-            <Center
-                w="100%"
-                borderRadius="md"
-                minH="20"
-                bg="blue.900"
-                _hover={{
-                    bgColor: 'blue.500',
-                    cursor: 'pointer'
-                }}
+            <>
+                <Center
+                    onClick={onClick}
+                    w="100%"
+                    borderRadius="md"
+                    minH="20"
+                    minW="60"
+                    bg="blue.900"
+                    _hover={{
+                        bgColor: 'blue.500',
+                        cursor: 'pointer'
+                    }}
+                >
+                    <Icon as={AiOutlinePlus} />
+                </Center>
 
-            >
-                <Icon as={AiOutlinePlus} />
-            </Center>
+
+            </>
         )
     }
 
@@ -43,6 +50,7 @@ export function PrgItemSkillMaker({ title, damage, isEmpty }: PrgItemSkillMakerP
                 direction="column"
                 p="4"
                 w="100%"
+                minW="60"
                 justify="center"
                 minH="20"
                 fontWeight="300">
@@ -56,6 +64,7 @@ export function PrgItemSkillMaker({ title, damage, isEmpty }: PrgItemSkillMakerP
             <Center
                 bg="blue.600"
                 minW="10"
+
                 borderTopRightRadius="md"
                 borderBottomRightRadius="md">
                 <Icon as={AiOutlinePlus} />
