@@ -1,6 +1,6 @@
-import { Flex, Icon, Text } from '@chakra-ui/react'
+import { Flex, Icon, Text,Link } from '@chakra-ui/react'
 import { ElementType } from "react";
-import Link, { LinkProps } from "next/link";
+
 
 interface PrgItemMeetingProps {
     icon?: ElementType
@@ -10,7 +10,7 @@ interface PrgItemMeetingProps {
 
 export function PrgItemMeeting({ icon,href= "#", children }: PrgItemMeetingProps) {
     return (
-        <Link href={href} passHref>
+        <Link href={href} passhref>
             <Flex align="center" p="4" _hover={{
                 bgGradient: "linear-gradient(257deg, blue.50 0%,blue.900 100%)",
                 cursor: "pointer"

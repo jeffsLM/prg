@@ -24,7 +24,7 @@ export default function SagaEditor() {
     return (
         <>
             <Center>
-                <Box H="100%" maxW={1440} w="100%" >
+                <Box h="100%" maxW={1440} w="100%" >
                     <Header nameModule="Elysium Saga's" />
                     <Flex w="100%" direction={["column", "row"]} mt="10">
                         <PrgContentItemMeeting>
