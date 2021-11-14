@@ -1,23 +1,24 @@
 import { Box, BoxProps, Flex, Text, VStack, Center, Link } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
-import { PrgIcon } from '../../Design/PrgIcon'
-import { Button } from '../../Design/Button'
+import { PrgIcon } from '../Design/PrgIcon'
+import { Button } from '../Design/Button'
 
 export const MotionBox = motion<BoxProps>(Box);
 
 interface CardProps {
-    href?: string
+    hrefPlay?: string
+    hrefEdit?: string
+    itsCompleted?: boolean
 }
 
-export function Card({ href }: CardProps) {
+export function Card({ hrefPlay,hrefEdit, itsCompleted = false }: CardProps) {
     return (
         <Flex
-            w="80%"
-            minWidth={350}
-            minH={550}
-            maxW={450}
-            m="2"
-            h="70%"
+            minWidth={250}
+            w="85%"
+            maxW={550}
+            ml={40}
+            h="70vh"
             bg="blue.700"
             justify="center"
             p="8"
@@ -37,13 +38,19 @@ export function Card({ href }: CardProps) {
                 </Center>
             </VStack>
             <Link
-                href={href}
+                href={hrefPlay}
                 passhref
                 style={{ textDecoration: 'none' }}
-                >
-                    
-                <Button  w="100%" text="Play" />
+            >
+                <Button w="100%" text={itsCompleted ?"Play" :"Criar"} />
             </Link>
+            {itsCompleted && (<Link
+                href={hrefEdit}
+                passhref
+                style={{ textDecoration: 'none' }}
+            >
+                <Button w="100%" text="Editar" isEdited />
+            </Link>)}
         </Flex>
     );
 }

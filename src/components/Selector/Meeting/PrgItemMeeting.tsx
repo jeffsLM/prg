@@ -10,7 +10,7 @@ interface PrgItemMeetingProps {
 
 export function PrgItemMeeting({ icon,href= "#", children }: PrgItemMeetingProps) {
     return (
-        <Link href={href} passhref>
+        <Link href={href} style={{ textDecoration: 'none' }} passhref>
             <Flex align="center" p="4" _hover={{
                 bgGradient: "linear-gradient(257deg, blue.50 0%,blue.900 100%)",
                 cursor: "pointer"

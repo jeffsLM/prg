@@ -15,7 +15,7 @@ export function Header({ nameModule }: HeaderProps) {
     return (
         <Flex as="header" justify="space-between" align="center" p="3">
             <HStack spacing="4" >
-                <Link href="/selector" style={{ textDecoration: 'none' }} passhref>
+                <Link href="/selector" style={{ textDecoration: 'none' }}>
                     <Logo
                         flexDir="row"
                         direction="row"

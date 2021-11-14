@@ -2,9 +2,10 @@ import { Button as ChakraButton, ButtonProps as ChakraButtonProps } from '@chakr
 
 interface ButtonProps extends ChakraButtonProps {
     text: string;
+    isEdited?: boolean;
 }
 
-export function Button({ text, type, ...rest }: ButtonProps) {
+export function Button({ text, type,isEdited, ...rest }: ButtonProps) {
     return (
         <ChakraButton
             boxShadow="md"
@@ -13,9 +14,10 @@ export function Button({ text, type, ...rest }: ButtonProps) {
             type={type}
             size="lg"
             mt="6"
-            bgGradient="linear( 258deg,blue.50 0%,blue.800 100%)"
+            bgGradient={isEdited ?"" : "linear( 258deg,blue.50 0%,blue.800 100%)"}
+            variant={isEdited ? "outline" : "none"}
             fontWeight="400"
-            colorScheme="blue"
+            colorScheme="whiteAlpha"
             {...rest}
         >
             {text}

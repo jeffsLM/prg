@@ -5,6 +5,9 @@ import { Footer } from '../components/Footer'
 
 import { theme } from '../styles/theme';
 
+import "swiper/css";
+import "swiper/css/pagination"
+
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
