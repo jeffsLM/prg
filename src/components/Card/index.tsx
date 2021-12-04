@@ -11,7 +11,7 @@ interface CardProps {
     itsCompleted?: boolean
 }
 
-export function Card({ hrefPlay,hrefEdit, itsCompleted = false }: CardProps) {
+export function Card({ hrefPlay, hrefEdit, itsCompleted = false }: CardProps) {
     return (
         <Flex
             minWidth={250}
@@ -38,15 +38,14 @@ export function Card({ hrefPlay,hrefEdit, itsCompleted = false }: CardProps) {
                 </Center>
             </VStack>
             <Link
-                href={hrefPlay}
-                passhref
+                href={itsCompleted ? hrefPlay : hrefEdit}
                 style={{ textDecoration: 'none' }}
             >
-                <Button w="100%" text={itsCompleted ?"Play" :"Criar"} />
+                <Button w="100%" text={itsCompleted ? "Play" : "Criar"} />
             </Link>
             {itsCompleted && (<Link
                 href={hrefEdit}
-                passhref
+
                 style={{ textDecoration: 'none' }}
             >
                 <Button w="100%" text="Editar" isEdited />

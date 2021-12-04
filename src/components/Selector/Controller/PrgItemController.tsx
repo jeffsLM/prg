@@ -10,7 +10,7 @@ interface PrgItemMeetingProps {
 
 export function PrgItemController({ iconLeft, iconRight, href = "#", children }: PrgItemMeetingProps) {
     return (
-        <Link href={href}  style={{ textDecoration: 'none' }} colorScheme="blue" passhref prefetch>
+        <Link href={href}  style={{ textDecoration: 'none' }} colorScheme="blue" >
             <Flex
                 align="center"
                 bg="blue.700"
