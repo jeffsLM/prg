@@ -7,6 +7,7 @@ export function PrgContentItemMeeting({ children }: PrgContentItemMeetingProps) 
     return (
         <Stack
             spacing="2"
+            position={["relative","fixed"]}
             overflow="auto"
             maxH={400}
             css={{
