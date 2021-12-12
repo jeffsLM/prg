@@ -36,7 +36,7 @@ export default function SagaEditor() {
                             </PrgItemMeeting>
                         </PrgContentItemMeeting>
 
-                        <VStack flex="1" p="4" justify="center">
+                        <VStack flex="1" p="4" justify="center"  ml={["0","190"]}>
                             <Flex
                                 h="200"
                                 w="100%"
