@@ -9,9 +9,10 @@ interface CardProps {
     hrefPlay?: string
     hrefEdit?: string
     itsCompleted?: boolean
+    isActive?: boolean
 }
 
-export function Card({ hrefPlay, hrefEdit, itsCompleted = false }: CardProps) {
+export function Card({ hrefPlay, hrefEdit, itsCompleted = false, isActive }: CardProps) {
     return (
         <Flex
             minWidth={250}
@@ -23,6 +24,9 @@ export function Card({ hrefPlay, hrefEdit, itsCompleted = false }: CardProps) {
             justify="center"
             p="8"
             direction="column"
+            css={`transform: scale(${isActive ? "1" : "0.85"});
+      transition: all 0.45s ease-out;
+            `}
         >
             <VStack spacing="16" >
                 <PrgIcon src="/images/mage@2x.png" boxSize="90px" alt="IconSelector" />
