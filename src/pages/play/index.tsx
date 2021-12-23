@@ -40,11 +40,11 @@ export default function Play() {
 
                             </Flex>
 
-                            <Player hp={10} mp={2} maxHp={15} maxMp={12} PlayerName='Juan' statusAtMoment="down"/>
-                            <Player hp={10} mp={2} maxHp={15} maxMp={12} PlayerName='Juan' />
-                            <Player hp={10} mp={2} maxHp={15} maxMp={12} PlayerName='Juan' />
-                            <Player hp={10} mp={2} maxHp={15} maxMp={12} PlayerName='Juan' />
-                            <Player hp={10} mp={2} maxHp={15} maxMp={12} PlayerName='Juan' />
+                            <Player placing={1} hp={480} mp={2} maxHp={550} maxMp={12} PlayerName='Juan Stronossa' statusAtMoment="down"/>
+                            <Player placing={2} hp={100} mp={2} maxHp={550} maxMp={12} PlayerName='Alek Burrak' />
+                            <Player placing={3} hp={10} mp={2} maxHp={550} maxMp={12} PlayerName='John Doe' />
+                            <Player placing={4} hp={10} mp={2} maxHp={550} maxMp={12} PlayerName='Saul' />
+                            <Player placing={5} hp={10} mp={2} maxHp={550} maxMp={12} PlayerName='Reverenda Madre' />
                      
                         </VStack>
 
