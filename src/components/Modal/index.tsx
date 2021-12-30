@@ -1,20 +1,28 @@
-import { Modal as ChakraModal, ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalFooter, ModalCloseButton, UseDisclosureProps } from '@chakra-ui/react'
-import {ReactNode} from 'react'
+import { Modal as ChakraModal, ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalFooter, ModalCloseButton, UseDisclosureProps, Text, Flex } from '@chakra-ui/react'
+import { ReactNode } from 'react'
 
 interface ModalProps extends UseDisclosureProps {
     TextHeader: string;
-    children:ReactNode;
+    optionTextHeader?: string;
+    children: ReactNode;
 }
 
-export function Modal({ isOpen, onClose,TextHeader,children }: ModalProps) {
+export function Modal({ isOpen, onClose, TextHeader, children,optionTextHeader='' }: ModalProps) {
     return (
         <ChakraModal isOpen={isOpen} size="6xl" onClose={onClose}>
             <ModalOverlay />
             <ModalContent bg="blue.700">
-                <ModalHeader fontSize="10" fontWeight="100">{TextHeader}</ModalHeader>
+                <ModalHeader >
+                    <Flex direction="row" align="center">
+
+                        <Text fontSize="19" fontWeight="300">{TextHeader}</Text>
+
+                        <Text fontSize="16" pl="5" fontWeight="100">{optionTextHeader}</Text>
+                    </Flex>
+                </ModalHeader>
                 <ModalCloseButton />
                 <ModalBody>
-                {children}
+                    {children}
                 </ModalBody>
             </ModalContent>
         </ChakraModal>
