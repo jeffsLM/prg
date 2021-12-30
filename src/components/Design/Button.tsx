@@ -18,6 +18,7 @@ export function Button({ text, type,isEdited, ...rest }: ButtonProps) {
             variant={isEdited ? "outline" : "none"}
             fontWeight="400"
             colorScheme="whiteAlpha"
+            cursor="pointer"
             {...rest}
         >
             {text}
