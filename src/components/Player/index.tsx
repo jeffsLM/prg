@@ -1,29 +1,35 @@
-import { Flex, Text, Box, HStack, Grid } from '@chakra-ui/react'
+import { Flex, Text, Box, HStack, Grid, FlexProps } from '@chakra-ui/react'
 
 import { PrgIcon } from '../Design/PrgIcon'
 import { PlayerStatus } from '../PlayerStatus'
 
-interface PlayerStatusProps {
+interface PlayerStatusProps extends FlexProps {
     hp: number;
     mp: number;
     maxHp: number;
     maxMp: number;
     PlayerName: string;
+    Class: string;
     statusAtMoment?: string;
     placing: number;
 }
 
-export function Player({ hp, mp, maxHp, maxMp, PlayerName, placing }: PlayerStatusProps) {
+export function Player({ hp, mp, maxHp, maxMp, PlayerName, placing, Class, onClick }: PlayerStatusProps) {
     return (
         <Flex
+            onClick={onClick}
             direction="column"
             w="100%"
-            h="30%"
             p="3"
             bgGradient={"linear(238deg, blue.900 0%,blue.700 100%)"}
             borderRadius={10}
+            cursor="pointer"
         >
-            <Text pl="10">{PlayerName}</Text>
+            <Flex pl="10" justify="space-between" align="center">
+                <Text >{PlayerName}</Text>
+                <Text fontSize="12" fontWeight="100" >{Class}</Text>
+
+            </Flex>
             <HStack direction="row" spacing="6" w="100%" align="center" >
                 <Text>{placing}</Text>
                 <PrgIcon src="/images/mage@2x.png" boxSize='35px' />
