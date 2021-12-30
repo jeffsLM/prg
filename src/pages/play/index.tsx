@@ -1,15 +1,39 @@
-import { Flex, Box, Center, VStack, Text, Icon } from '@chakra-ui/react'
+import {
+    Flex,
+    Box,
+    Center,
+    VStack,
+    Text,
+    Icon,
+    useDisclosure,
+    Grid,
+    GridItem,
+    Slider,
+    SliderTrack,
+    SliderFilledTrack,
+    SliderThumb,
+    SliderMark,
+} from '@chakra-ui/react'
 import { AiOutlineDoubleRight } from 'react-icons/ai'
+import React from 'react'
 
 import { Header } from '../../components/Header'
 import { PrgItemMeeting } from '../../components/Selector/Meeting/PrgItemMeeting'
 import { PrgContentItemMeeting } from '../../components/Selector/Meeting/PrgContentItemMeeting'
 import { Story } from '../../components/Story'
 import { Button } from '../../components/Design/Button'
+import { PrgIcon } from '../../components/Design/PrgIcon'
 import { Player } from '../../components/Player'
-import React from 'react'
+import { Modal } from '../../components/Modal'
+import { PlayerStatus } from '../../components/PlayerStatus'
 
 export default function Play() {
+
+    const { isOpen, onOpen, onClose } = useDisclosure()
+    // const [type, SetType] = useState('player');
+
+
+
     return (
         <>
             <Center>
@@ -40,17 +64,105 @@ export default function Play() {
 
                             </Flex>
 
-                            <Player placing={1} hp={480} mp={2} maxHp={550} maxMp={12} PlayerName='Juan Stronossa' statusAtMoment="down"/>
-                            <Player placing={2} hp={100} mp={2} maxHp={550} maxMp={12} PlayerName='Alek Burrak' />
-                            <Player placing={3} hp={10} mp={2} maxHp={550} maxMp={12} PlayerName='John Doe' />
-                            <Player placing={4} hp={10} mp={2} maxHp={550} maxMp={12} PlayerName='Saul' />
-                            <Player placing={5} hp={10} mp={2} maxHp={550} maxMp={12} PlayerName='Reverenda Madre' />
-                     
+                            <Player
+                                onClick={onOpen}
+                                placing={1}
+                                hp={480}
+                                mp={2}
+                                maxHp={550}
+                                maxMp={12}
+                                PlayerName='Juan
+                              Stronossa'
+                                Class="mage"
+                                statusAtMoment="down" />
+
+                            {/* <Player
+                                placing={2}
+                                hp={100}
+                                mp={2}
+                                maxHp={550}
+                                maxMp={12}
+                                PlayerName='Alek
+                              Burrak'
+                                Class="bardo-necromante" />
+
+                            <Player
+                                placing={3}
+                                hp={10}
+                                mp={2}
+                                maxHp={550}
+                                maxMp={12}
+                                PlayerName='John
+                              Doe'
+                                Class="ranger" />
+
+                            <Player
+                                placing={4}
+                                hp={10}
+                                mp={2}
+                                maxHp={550}
+                                maxMp={12}
+                                PlayerName='Saul'
+                                Class="berserk" />
+
+                            <Player
+                                placing={5}
+                                hp={10}
+                                mp={2}
+                                maxHp={550}
+                                maxMp={12}
+                                PlayerName='Reverenda
+                              Madre'
+                                Class="ranger" /> */}
+
                         </VStack>
 
                     </Flex>
                 </Box>
             </Center>
+
+            <Modal TextHeader="Ruan Estronossa" optionTextHeader="bardo-necromante" isOpen={isOpen} onOpen={onOpen} onClose={onClose}>
+                <Grid
+                    h='200px'
+                    maxWidth="62%"
+                    templateRows='repeat(2, 1fr)'
+                    templateColumns='repeat(5, 1fr)'
+                    gap={2}
+                >
+                    <GridItem rowSpan={2} colSpan={1} >
+                        <Center w="100%" h="100%">
+                            <PrgIcon src="/images/mage@2x.png" boxSize='55' boxShadow='xl' p='6' rounded='md' bg='white' />
+                        </Center>
+                    </GridItem>
+
+                    <GridItem colSpan={4}>
+                        <PlayerStatus
+                            value={480}
+                            maxValue={550}
+                            colorActivate="green.50"
+                            colorDesactive="green.800"
+                            barsCount={35}
+                            h={10} w={10}
+                            ml="1" />
+                        <Slider aria-label='slider-ex-1' defaultValue={30}>
+                            <SliderTrack>
+                                <SliderFilledTrack />
+                            </SliderTrack>
+                            <SliderThumb />
+                        </Slider>
+                    </GridItem>
+                    <GridItem colSpan={4}>
+                        <PlayerStatus
+                            value={12}
+                            maxValue={12}
+                            colorActivate="blue.300"
+                            colorDesactive="blue.800"
+                            barsCount={35}
+                            h={10} w={10}
+                            ml="1" />
+                    </GridItem>
+                </Grid>
+            </Modal>
         </>
     )
 }
