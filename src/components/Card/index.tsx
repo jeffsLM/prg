@@ -29,7 +29,7 @@ export function Card({ hrefPlay, hrefEdit, itsCompleted = false, isActive }: Car
             `}
         >
             <VStack spacing="16" >
-                <PrgIcon src="/images/mage@2x.png" boxSize="90px" alt="IconSelector" />
+                <PrgIcon renderImage src="/images/mage@2x.png" boxSize="90px" alt="IconSelector" />
                 <Center >
                     <Flex direction="column" pt="1.5" ml="2" alignItems="center">
                         <Text fontSize="22" fontWeight="500">
