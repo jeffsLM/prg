@@ -21,7 +21,7 @@ export function Modal({ isOpen, onClose, TextHeader, children,optionTextHeader='
                     </Flex>
                 </ModalHeader>
                 <ModalCloseButton />
-                <ModalBody>
+                <ModalBody css={`box-sizing: border-box;`}>
                     {children}
                 </ModalBody>
             </ModalContent>
